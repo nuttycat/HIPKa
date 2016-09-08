@@ -1,8 +1,9 @@
 # HIPKa
 
 ## Quick Start
-```sh
+
 Convert source code to eclipse project:
+```sh
 cd ~/HIPKa
 mvn eclipse:eclipse
 ```
