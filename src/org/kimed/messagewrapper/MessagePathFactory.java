@@ -40,14 +40,12 @@ public class MessagePathFactory
         	System.out.println("");
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
-            int line = 1;
             while ((tempString = reader.readLine()) != null) 
             {
             	String[] pathInfo = tempString.split(":");
             	String[] pathNodes = pathInfo[1].split(",");
             	String pathKey = pathInfo[0];
             	mMapPathKeyToPath.put(pathKey, new MessagePath(pathNodes));
-                line++;
             }
             reader.close();
         } catch (Exception e) 
