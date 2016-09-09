@@ -2,8 +2,14 @@ package org.kimed.messagewrapper;
 
 import java.io.Serializable;
 
-public class PathedMessage<T> implements Serializable
+/**
+ * Message with route path info, node of path is kafka topic.
+ *
+ * @param <T> origin message prototype
+ */
+public class PathedMessage<T extends Serializable> implements Serializable
 {
+	/** serial version, should ensure same in serialize and deserialize port*/
 	static final long serialVersionUID = 10000L;
 	
 	private MessagePath mMsgPath;

@@ -4,13 +4,20 @@ public class Consumer
 {
 	public static void main(String[] args)
 	{
-		PathedMessageProducer<String> produder = new PathedMessageProducer<String>("config/producer.properties");
-		
 		TestMessageProcessor processor = new TestMessageProcessor();
-		PathedMessageConsumer<String> consumer = new PathedMessageConsumer<String>("config/consumer.properties");
-		processor.setmProcessorName(consumer.getConsumeTopic());
-		consumer.setMessageTranspondProducer(produder);
-		consumer.setMessageProcessor(processor);
-		consumer.start();
+		
+		String conumerNodeName;
+		if(args.length > 0){
+			conumerNodeName = args[0];
+		}
+		else{
+			conumerNodeName = "ConsumeNode" + System.currentTimeMillis();
+		}
+		
+		System.out.println(conumerNodeName);
+		
+		processor.setProcessorName(conumerNodeName);
+		
+		PathedMessageConsumer.registerConsumeProcessor("config/consumer.properties", processor);
 	}
 }

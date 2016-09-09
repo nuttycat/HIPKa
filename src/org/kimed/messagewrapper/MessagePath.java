@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * message route info 
+ * <p>implemented as a list of kafka topics, which instruct consumer nodes to 
+ * transpond message alone the list
+ */
 public class MessagePath implements Serializable, Cloneable {
 	private List<String> mPath= new ArrayList<>();
 	int position=0;

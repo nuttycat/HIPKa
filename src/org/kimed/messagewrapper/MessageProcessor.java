@@ -15,7 +15,7 @@ class TestMessageProcessor implements MessageProcessor<String>{
 		return result;
 	}
 	
-	public void setmProcessorName(String name){
+	public void setProcessorName(String name){
 		mProcessorName = name;
 	}
 }
